@@ -1,0 +1,16 @@
+{
+    "name": "dmytrokolida/test-plugin",
+    "type": "wordpress-plugin",
+    "autoload": {
+        "psr-4": {
+            "Dmytrokolida\\TestPlugin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dymirt",
+            "email": "kolidadmytro@gmail.com"
+        }
+    ],
+    "require": {}
+}
