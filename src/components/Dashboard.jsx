@@ -102,7 +102,7 @@ const Dashboard = () => {
 
                 </div>
                 <p>Koszt windykacji wyniesie: <strong>{collection_provision} zł</strong></p>
-                <p>Koszt windykacji u konkurencji wyniesie: <strong>{collection_amount * 0.06}zł</strong></p>
+                <p>Koszt windykacji u konkurencji wyniesie: <strong>{collection_amount * 0.06} zł</strong></p>
             </div>
     );
 }
