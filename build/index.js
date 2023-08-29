@@ -18,9 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const App = () => {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
-    className: "app-title"
-  }, "Job Place App"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("hr", null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Dashboard__WEBPACK_IMPORTED_MODULE_2__["default"], null);
 };
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
@@ -40,11 +38,89 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Dashboard = () => {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "dashboard"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "card"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", null, "Dashboard"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Edit Dashboard component at ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("code", null, "src/components/Dashboard.jsx"))));
+  const [collection_amount, setCollectionAmount] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(200);
+  const [collection_latency, setCollectionLatency] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(1);
+  const [collection_provision, setCollectionProvision] = react__WEBPACK_IMPORTED_MODULE_1___default().useState(calculateCollectionProvision());
+  const min_collection_amount = 200;
+  const max_collection_amount = 1000000;
+  const step_collection_amount = 100;
+  const min_collection_latency = 1;
+  const max_collection_latency = 1095;
+  const step_collection_latency = 1;
+  function calculateCollectionProvision() {
+    switch (true) {
+      case collection_amount <= 5000 && collection_latency <= 3 * 30:
+        return collection_amount * 0.16;
+      case collection_amount <= 30000 && collection_latency <= 3 * 30:
+        return collection_amount * 0.11;
+      case collection_amount <= 50000 && collection_latency <= 3 * 30:
+        return collection_amount * 0.08;
+      case collection_amount > 50000 && collection_latency <= 3 * 30:
+        return collection_amount * 0.06;
+      case collection_amount <= 5000 && collection_latency <= 12 * 30:
+        return collection_amount * 0.21;
+      case collection_amount <= 30000 && collection_latency <= 12 * 30:
+        return collection_amount * 0.13;
+      case collection_amount <= 50000 && collection_latency <= 12 * 30:
+        return collection_amount * 0.11;
+      case collection_amount > 50000 && collection_latency <= 12 * 30:
+        return collection_amount * 0.09;
+      case collection_amount <= 5000 && collection_latency > 12 * 30:
+        return collection_amount * 0.21;
+      case collection_amount <= 30000 && collection_latency > 12 * 30:
+        return collection_amount * 0.16;
+      case collection_amount <= 50000 && collection_latency > 12 * 30:
+        return collection_amount * 0.13;
+      case collection_amount > 50000 && collection_latency > 12 * 30:
+        return collection_amount * 0.11;
+      default:
+        return 0;
+    }
+  }
+
+  // Call the function to initialize collection_provision
+  react__WEBPACK_IMPORTED_MODULE_1___default().useEffect(() => {
+    setCollectionProvision(calculateCollectionProvision());
+  }, [collection_amount, collection_latency]);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "input-group"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "wpas_log"
+  }, "Jaki d\u0142ug chcesz odzyska\u0107:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    className: "wpas-form-control",
+    type: "number",
+    min: min_collection_amount,
+    max: max_collection_amount,
+    step: step_collection_amount,
+    value: collection_amount,
+    onChange: e => setCollectionAmount(parseInt(e.target.value, 10))
+  }), "z\u0142"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "range",
+    min: min_collection_amount,
+    max: max_collection_amount,
+    step: step_collection_amount,
+    value: collection_amount,
+    onChange: e => setCollectionAmount(parseInt(e.target.value, 10))
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "input-group"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "wpas_log"
+  }, "Przeterminowanie p\u0142atno\u015B\u0107i:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    className: "wpas-form-control",
+    type: "number",
+    min: min_collection_latency,
+    max: max_collection_latency,
+    step: step_collection_latency,
+    value: collection_latency,
+    onChange: e => setCollectionLatency(parseInt(e.target.value, 10))
+  }), "dni"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "range",
+    min: min_collection_latency,
+    max: max_collection_latency,
+    step: step_collection_latency,
+    value: collection_latency,
+    onChange: e => setCollectionLatency(parseInt(e.target.value, 10))
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_provision, " z\u0142")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji u konkurencji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_amount * 0.06, "z\u0142")));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 
@@ -171,7 +247,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // Render the App component into the DOM
-(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_App__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById('jobplace'));
+(0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.render)((0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_App__WEBPACK_IMPORTED_MODULE_1__["default"], null), document.getElementById('collection_calculator'));
 }();
 /******/ })()
 ;

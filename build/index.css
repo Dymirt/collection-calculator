@@ -1,10 +1,90 @@
 /*!********************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/style/main.scss ***!
   \********************************************************************************************************************************************************************************************************************************************/
-#jobplace .app-title {
-  font-size: 1.5em;
-  font-weight: bold;
-  margin-bottom: 1em;
+#collection_calculator .wpas-form-control {
+  width: 200px;
+}
+#collection_calculator #collection_amount, #collection_calculator #payment_latency {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  #collection_calculator #collection_amount, #collection_calculator #payment_latency {
+    width: 50%;
+  }
+}
+#collection_calculator .input-group {
+  /* Safari */
+  /* Chrome */
+  /* Firefox */
+  /* General */
+}
+@media (min-width: 768px) {
+  #collection_calculator .input-group {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+#collection_calculator .input-group label {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  padding-top: 6px;
+  margin-right: 30px;
+}
+#collection_calculator .input-group input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #82b510;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#collection_calculator .input-group input[type=range]::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  background: #82b510;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#collection_calculator .input-group input[type=range]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #82b510;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#collection_calculator .input-group input[type=range]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: #82b510;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#collection_calculator .input-group input {
+  text-align: right;
+  margin-right: 6px;
+  width: 300px;
+}
+@media (max-width: 768px) {
+  #collection_calculator .input-group input {
+    margin-bottom: 10px;
+    width: 300px;
+  }
+}
+#collection_calculator .input-group input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 500px;
+}
+@media (max-width: 768px) {
+  #collection_calculator .input-group input[type=range] {
+    width: 300px;
+  }
+}
+#collection_calculator .input-group span {
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 
 /*# sourceMappingURL=index.css.map*/

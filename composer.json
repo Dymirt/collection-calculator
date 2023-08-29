@@ -1,5 +1,5 @@
 {
-    "name": "dmytrokolida/test-plugin",
+    "name": "dmytrokolida/collection-calculator",
     "type": "wordpress-plugin",
     "autoload": {
         "psr-4": {
