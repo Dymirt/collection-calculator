@@ -12,7 +12,7 @@ License: A "Slug" license name e.g. GPL2
 function calculator_shortcode_output() {
 	ob_start(); // Start output buffering
 	wp_enqueue_style( 'collection-calculator-style', plugin_dir_url( __FILE__ ) . 'build/index.css' );
-	wp_enqueue_script( 'collection-calculator-script', plugin_dir_url( __FILE__ ) . 'build/index.js');
+	wp_enqueue_script( 'collection-calculator-script', plugin_dir_url( __FILE__ ) . 'build/index.js', array( 'wp-element' ), '1.0.0', true );
 	// Load the app.php template
 	include plugin_dir_path( __FILE__ ) . 'templates/app.php';
 

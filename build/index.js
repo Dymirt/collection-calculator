@@ -120,7 +120,7 @@ const Dashboard = () => {
     step: step_collection_latency,
     value: collection_latency,
     onChange: e => setCollectionLatency(parseInt(e.target.value, 10))
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_provision, " z\u0142")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji u konkurencji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_amount * 0.06, "z\u0142")));
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_provision, " z\u0142")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji u konkurencji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_amount * 0.06, " z\u0142")));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 

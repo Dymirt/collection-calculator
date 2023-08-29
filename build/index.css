@@ -61,7 +61,7 @@
   cursor: pointer;
 }
 #collection_calculator .input-group input {
-  text-align: right;
+  text-align: center;
   margin-right: 6px;
   width: 300px;
 }
