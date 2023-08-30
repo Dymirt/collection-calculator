@@ -1,13 +1,4 @@
 #collection_calculator {
-  .wpas-form-control{
-    width: 200px;
-  }
-  #collection_amount, #payment_latency{
-    width: 100%;
-    @media (min-width: 768px){
-      width: 50%;
-    }
-  }
   .input-group{
     @media (min-width: 768px){
       display: flex;
@@ -18,45 +9,6 @@
       padding-top: 6px;
       margin-right: 30px;
     }
-
-    /* Safari */
-    input[type="range"]::-webkit-slider-thumb {
-      -webkit-appearance: none;
-      width: 20px;
-      height: 20px;
-      background: #82b510;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    /* Chrome */
-    input[type="range"]::-webkit-slider-thumb {
-      width: 20px;
-      height: 20px;
-      background: #82b510;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    /* Firefox */
-    input[type="range"]::-moz-range-thumb {
-      width: 20px;
-      height: 20px;
-      background: #82b510;
-      border: none;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
-    /* General */
-    input[type="range"]::-ms-thumb {
-      width: 20px;
-      height: 20px;
-      background: #82b510;
-      border-radius: 50%;
-      cursor: pointer;
-    }
-
     input{
       text-align: center;
       margin-right: 6px;
@@ -74,6 +26,45 @@
           width: 300px;
         }
       }
+      /* Range selector thumb */
+      /* General */
+      &[type="range"]::-ms-thumb {
+        width: 20px;
+        height: 20px;
+        background: #82b510;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* Safari */
+      &[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #82b510;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* Chrome */
+      &[type="range"]::-webkit-slider-thumb {
+        width: 20px;
+        height: 20px;
+        background: #82b510;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      /* Firefox */
+      &[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #82b510;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      /* END Range selector thumb */
     }
     span{
       min-width: max-content;

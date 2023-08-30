@@ -82,12 +82,9 @@ const Dashboard = () => {
   react__WEBPACK_IMPORTED_MODULE_1___default().useEffect(() => {
     setCollectionProvision(calculateCollectionProvision());
   }, [collection_amount, collection_latency]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "input-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "wpas_log"
-  }, "Jaki d\u0142ug chcesz odzyska\u0107:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    className: "wpas-form-control",
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Jaki d\u0142ug chcesz odzyska\u0107:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "number",
     min: min_collection_amount,
     max: max_collection_amount,
@@ -103,10 +100,7 @@ const Dashboard = () => {
     onChange: e => setCollectionAmount(parseInt(e.target.value, 10))
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "input-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "wpas_log"
-  }, "Przeterminowanie p\u0142atno\u015B\u0107i:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    className: "wpas-form-control",
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Przeterminowanie p\u0142atno\u015B\u0107i:"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "number",
     min: min_collection_latency,
     max: max_collection_latency,
@@ -120,7 +114,7 @@ const Dashboard = () => {
     step: step_collection_latency,
     value: collection_latency,
     onChange: e => setCollectionLatency(parseInt(e.target.value, 10))
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_provision, " z\u0142")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji u konkurencji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_amount * 0.06, " z\u0142")));
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, collection_provision.toFixed(2), " z\u0142")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Koszt windykacji u konkurencji wyniesie: ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("strong", null, (collection_amount * 0.06).toFixed(2), " z\u0142")));
 };
 /* harmony default export */ __webpack_exports__["default"] = (Dashboard);
 

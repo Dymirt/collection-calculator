@@ -3,7 +3,7 @@
 Plugin Name: Suwak wyceny windykacji
 Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: Dodaj kalkulator prowizji windykacji za pomocą shortcode [calculator_shortcode]
-Version: 1.2
+Version: 1.2.1
 Author: dmytrokolida
 Author URI: http://URI_Of_The_Plugin_Author
 License: A "Slug" license name e.g. GPL2

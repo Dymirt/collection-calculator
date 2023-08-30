@@ -52,58 +52,48 @@ const Dashboard = () => {
     }, [collection_amount, collection_latency]);
 
     return (
-            <div>
-
-                <div className='input-group'>
-                    <label htmlFor="wpas_log">Jaki dług chcesz odzyskać:</label>
-                    <span><input
-                            className="wpas-form-control"
-                            type="number"
-                            min={min_collection_amount}
-                            max={max_collection_amount}
-                            step={step_collection_amount}
-                            value={collection_amount}
-                            onChange={(e) => setCollectionAmount(parseInt(e.target.value, 10))}
-                        />
-                        zł</span>
-
-                    <input
-                        type="range"
+        <>
+            <div className='input-group'>
+                <label>Jaki dług chcesz odzyskać:</label>
+                <span><input
+                        type="number"
                         min={min_collection_amount}
                         max={max_collection_amount}
                         step={step_collection_amount}
-
                         value={collection_amount}
                         onChange={(e) => setCollectionAmount(parseInt(e.target.value, 10))}
-                    />
-                </div>
-                <div className='input-group'>
-                    <label htmlFor="wpas_log">Przeterminowanie płatnośći:</label>
-                    <span><input
-                        className="wpas-form-control"
-
-                        type="number"
-                        min={min_collection_latency}
-                        max={max_collection_latency}
-                        step={step_collection_latency}
-                        value={collection_latency}
-                        onChange={(e) => setCollectionLatency(parseInt(e.target.value, 10))}
-                    />
-                    dni</span>
-                    <input
-                        type="range"
-                        min={min_collection_latency}
-                        max={max_collection_latency}
-                        step={step_collection_latency}
-                        value={collection_latency}
-
-                        onChange={(e) => setCollectionLatency(parseInt(e.target.value, 10))}
-                    />
-
-                </div>
-                <p>Koszt windykacji wyniesie: <strong>{collection_provision} zł</strong></p>
-                <p>Koszt windykacji u konkurencji wyniesie: <strong>{collection_amount * 0.06} zł</strong></p>
+                    />zł</span>
+                <input
+                    type="range"
+                    min={min_collection_amount}
+                    max={max_collection_amount}
+                    step={step_collection_amount}
+                    value={collection_amount}
+                    onChange={(e) => setCollectionAmount(parseInt(e.target.value, 10))}
+                />
             </div>
+            <div className='input-group'>
+                <label>Przeterminowanie płatnośći:</label>
+                <span><input
+                    type="number"
+                    min={min_collection_latency}
+                    max={max_collection_latency}
+                    step={step_collection_latency}
+                    value={collection_latency}
+                    onChange={(e) => setCollectionLatency(parseInt(e.target.value, 10))}
+                />dni</span>
+                <input
+                    type="range"
+                    min={min_collection_latency}
+                    max={max_collection_latency}
+                    step={step_collection_latency}
+                    value={collection_latency}
+                    onChange={(e) => setCollectionLatency(parseInt(e.target.value, 10))}
+                />
+            </div>
+            <p>Koszt windykacji wyniesie: <strong>{collection_provision.toFixed(2)} zł</strong></p>
+            <p>Koszt windykacji u konkurencji wyniesie: <strong>{(collection_amount * 0.06).toFixed(2)} zł</strong></p>
+        </>
     );
 }
 
